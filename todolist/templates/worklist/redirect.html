@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<head>
+  <title>List of To-dos</title>
+  <style>
+    table,
+    th,
+    td,
+    tr {
+      border: 2px solid;
+      text-align: center;
+      border-collapse: collapse;
+      border-bottom: 2px solid #999;
+
+    }
+
+    #nw {
+      white-space: pre-line;
+      width: fit-content;
+      table-layout: fixed;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>To-Dos</h1>
+  <div>
+    <table>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Content</th>
+          <th id="nw">Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for query in query_list %}
+        <tr>
+          <td>{{query.title}}</td>
+          <td>{{query.content}}</td>
+          <td>{{query.date}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</body>
+
+</html>
